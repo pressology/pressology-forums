@@ -42,25 +42,25 @@ if ( !class_exists( 'pressologyForums' ) ) {
 
 		public function enqueue_public_styles() {
 
-			wp_enqueue_style( 'pressology_public_style', plugin_dir_path( __FILE__, 'css/public-pressology.css' ) );
+			wp_enqueue_style( 'pressology_public_style', str_replace( "\\", "/", plugin_dir_url( __FILE__ ) ) . 'css/public-pressology.css' );
 
 		}
 
 		public function enqueue_public_scripts() {
 
-			wp_enqueue_script( 'pressology_public_script', plugin_dir_path( __FILE__, 'js/public-pressology.js' ) );
+			wp_enqueue_script( 'pressology_public_script', str_replace( "\\", "/", plugin_dir_url( __FILE__ ) ) . 'js/public-pressology.js' );
 
 		}
 
 		public function enqueue_admin_scripts() {
 
-			wp_enqueue_script( 'pressology_admin_script', plugin_dir_path( __FILE__, 'js/admin-pressology.js' ) );
+			wp_enqueue_script( 'pressology_admin_script', str_replace( "\\", "/", plugin_dir_url( __FILE__ ) ) . 'js/admin-pressology.js' );
 
 		}
 
 		public function enqueue_admin_styles() {
 
-			wp_enqueue_style( 'pressology_admin_style', plugin_dir_path( __FILE__, 'css/admin-pressology.css' ) );
+			wp_enqueue_style( 'pressology_admin_style', str_replace( "\\", "/", plugin_dir_url( __FILE__ ) ) . 'css/admin-pressology.css' );
 
 		}
 
