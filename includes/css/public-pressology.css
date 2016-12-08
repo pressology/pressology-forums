@@ -2,3 +2,19 @@ h1 .pressology-title {
 	font-size: 32em;
 	color: #0f0f0f;
 }
+
+.pressology-forum-view {
+	padding: 5px;
+}
+
+.pressology-forum-post-listing {
+	padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	width: 100%;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	background-color: rgba(0,0,0,0.05);
+	max-height: 150px;
+	overflow: hidden;
+}

@@ -11,11 +11,12 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
+		<div class="pressology-forum-view">
 
 			<?php if ( have_posts() ) : ?>
-
+			
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Forum Archives: %s', 'twentyfourteen' ), single_cat_title( '', false ) ); ?></h1>
+				<h1 class="archive-title"><?php printf( __( 'Forum: %s', 'twentyfourteen' ), single_cat_title( '', false ) ); ?></h1>
 
 				<?php
 					// Show an optional term description.
@@ -36,8 +37,8 @@ get_header(); ?>
 					 * (where ___ is the post format) and that will be used instead.
 					 */
 					//get_template_part( 'content', get_post_format() );
-					?><h1 class='pressology-title'>Title:</h1> <a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>'><?php the_title(); ?></a><?php
-					the_content();
+					?><div class="pressology-forum-post-listing"><h1 class='pressology-title'></h1> <a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>'><?php the_title(); ?></a><?php
+					the_content();?></div><?php
 
 					endwhile;
 					// Previous/next page navigation.
@@ -49,6 +50,7 @@ get_header(); ?>
 
 				endif;
 			?>
+		</div><!-- .pressology-forum-view -->
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
