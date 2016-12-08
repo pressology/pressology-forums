@@ -37,8 +37,15 @@ get_header(); ?>
 					 * (where ___ is the post format) and that will be used instead.
 					 */
 					//get_template_part( 'content', get_post_format() );
-					?><div class="pressology-forum-post-listing"><h1 class='pressology-title'></h1> <a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>'><?php the_title(); ?></a><?php
-					the_content();?></div><?php
+					?>
+					<div class="pressology-forum-post-listing">
+						<h1 class='pressology-title'><a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>''><?php the_title(); ?></a></h1>
+						<span class='pressology-post-author'>Posted by <?php the_author(); ?></span><span class="pressology-post-date"> on <?php get_the_date(); ?></span>
+						<?php
+						the_excerpt();?>
+						<div class="pressology-forum-quickbar"><a id="quick-reply" href="">Reply</a><a href="">PM Author</a><a href="">Upvote</a></div>
+						<div class="pressology-forum-quick-reply"> <?php comment_form(); ?> </div>
+					</div><?php
 
 					endwhile;
 					// Previous/next page navigation.

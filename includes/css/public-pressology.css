@@ -15,6 +15,37 @@ h1 .pressology-title {
 	border-radius: 30px;
 	-webkit-border-radius: 30px;
 	background-color: rgba(0,0,0,0.05);
-	max-height: 150px;
 	overflow: hidden;
+}
+
+.pressology-forum-quick-reply {
+	padding: 15px;
+}
+
+.pressology-post-author {
+	color: rgba(0,0,0,0.5);
+	font-style: italic;
+}
+
+.pressology-post-date {
+	color: rgba(0,0,0,0.5);
+	font-style: italic;
+}
+
+.pressology-forum-quickbar {
+}
+
+.pressology-forum-quickbar a {
+	padding: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.pressology-forum-quickbar a:hover {
+	background-color: white;
+	color: black;
 }
