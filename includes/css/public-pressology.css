@@ -2,3 +2,77 @@ h1 .pressology-title {
 	font-size: 32em;
 	color: #0f0f0f;
 }
+
+.pressology-forum-view {
+	padding: 5px;
+}
+
+.pressology-forum-post-listing {
+	padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	width: 100%;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	background-color: rgba(0,0,0,0.05);
+	overflow: hidden;
+}
+
+.pressology-forum-quickbar {
+	margin-top: 10px;
+}
+
+.pressology-forum-quick-reply {
+	padding: 15px;
+	height: 0px;
+}
+
+.pressology-forum-quick-thread {
+	margin-top: 15px;
+	height: 0px;
+	overflow: hidden;
+}
+
+.pressology-forum-quick-thread  #submit {
+	float: right;
+}
+
+.pressology-forum-quick-thread > input {
+	martin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#pressology-forum-quick-editor {
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	width: 90%;
+	margin-top: 15px;
+}
+
+.pressology-post-author {
+	color: rgba(0,0,0,0.5);
+	font-style: italic;
+}
+
+.pressology-post-date {
+	color: rgba(0,0,0,0.5);
+	font-style: italic;
+}
+
+.pressology-forum-quickbar {
+}
+
+.pressology-forum-quickbar a {
+	padding: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.pressology-forum-quickbar a:hover {
+	background-color: white;
+	color: black;
+}

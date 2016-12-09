@@ -11,12 +11,12 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
+		<div class="pressology-forum-view">
 
 			<?php if ( have_posts() ) : ?>
-
+			
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Forum Archives: %s', 'twentyfourteen' ), single_cat_title( '', false ) ); ?></h1>
-
+				<h1 class="archive-title"><?php printf( __( 'Forum: %s', 'twentyfourteen' ), single_cat_title( '', false ) ); ?></h1>
 				<?php
 					// Show an optional term description.
 					$term_description = term_description();
@@ -24,6 +24,17 @@ get_header(); ?>
 						printf( '<div class="taxonomy-description">%s</div>', $term_description );
 					endif;
 				?>
+				<div class="pressology-forum-quickbar"><a id="quick-thread" href="">Post New Thread</a><a href="">Follow Forum</a></div>
+				<div class="pressology-forum-quick-thread small">
+					<h3>Title</h3>
+					<form id="submit-quick-thread" action="">
+					<input type="text" size="30" spellcheck="true">
+					<?php
+						wp_editor('', 'pressology-forum-quick-editor');
+					?>
+					<input type="submit" id="submit" class="submit">
+					</form>
+				</div><!-- quick thread -->
 			</header><!-- .archive-header -->
 
 			<?php
@@ -36,8 +47,17 @@ get_header(); ?>
 					 * (where ___ is the post format) and that will be used instead.
 					 */
 					//get_template_part( 'content', get_post_format() );
-					?><h1 class='pressology-title'>Title:</h1> <a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>'><?php the_title(); ?></a><?php
-					the_content();
+					$displaytime = " on " . get_the_date() . " at " . get_the_time();
+
+					?>
+					<div class="pressology-forum-post-listing">
+						<h1 class='pressology-title'><a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>''><?php the_title(); ?></a></h1>
+						<span class='pressology-post-author'>Posted by <?php the_author(); ?></span><span class="pressology-post-date"><?php echo $displaytime; ?></span>
+						<?php
+						the_excerpt();?>
+						<div class="pressology-forum-quickbar"><!-- <a id="quick-reply" href="">Reply</a> --><a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>>View Thread</a><a href="">Follow Thread</a><a href="">Upvote</a></div>
+						<!-- <div class="pressology-forum-quick-reply small"></div> -->
+					</div><?php
 
 					endwhile;
 					// Previous/next page navigation.
@@ -49,6 +69,7 @@ get_header(); ?>
 
 				endif;
 			?>
+		</div><!-- .pressology-forum-view -->
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
