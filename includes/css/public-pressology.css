@@ -18,8 +18,35 @@ h1 .pressology-title {
 	overflow: hidden;
 }
 
+.pressology-forum-quickbar {
+	margin-top: 10px;
+}
+
 .pressology-forum-quick-reply {
 	padding: 15px;
+	height: 0px;
+}
+
+.pressology-forum-quick-thread {
+	margin-top: 15px;
+	height: 0px;
+	overflow: hidden;
+}
+
+.pressology-forum-quick-thread  #submit {
+	float: right;
+}
+
+.pressology-forum-quick-thread > input {
+	martin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#pressology-forum-quick-editor {
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	width: 90%;
+	margin-top: 15px;
 }
 
 .pressology-post-author {
