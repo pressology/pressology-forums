@@ -6,6 +6,19 @@
  *
  * @package Pressology Forums
  */
+if ( $_POST['new_thread'] == 'yes' ) {
+	if ( $_POST['pressology-newpost-title'] ) {
+	$title = $_POST['pressology-newpost-title'];
+	$args = array(
+		'post_author' => get_current_user_id(),
+		'post_title' => $title,
+		'post_type' => 'pressology_post',
+		);
+	if ( $post = wp_insert_post( $args ) ) {
+		wp_redirect( get_the_permalink( $post ) );
+	}
+}
+}
 
 get_header(); ?>
 
@@ -27,8 +40,8 @@ get_header(); ?>
 				<div class="pressology-forum-quickbar"><a id="quick-thread" href="">Post New Thread</a><a href="">Follow Forum</a></div>
 				<div class="pressology-forum-quick-thread small">
 					<h3>Title</h3>
-					<form id="submit-quick-thread" action="">
-					<input type="text" size="30" spellcheck="true">
+					<form id="submit-quick-thread" action="<?php echo $current_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" method="post">
+					<input type="text" size="30" spellcheck="true" name="pressology-newpost-title">
 					<?php
 						wp_editor('', 'pressology-forum-quick-editor');
 					?>

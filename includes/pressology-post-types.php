@@ -3,9 +3,9 @@ class pressologyPostTypes {
 	public static function pressology_forum_post_type() {
 
 		$labels = array(
-			'name'                  => _x( 'Forum Posts', 'Post Type General Name', 'text_domain' ),
+			'name'                  => _x( 'Forums', 'Post Type General Name', 'text_domain' ),
 			'singular_name'         => _x( 'Forum Post', 'Post Type Singular Name', 'text_domain' ),
-			'menu_name'             => __( 'Forum Posts', 'text_domain' ),
+			'menu_name'             => __( 'Forums', 'text_domain' ),
 			'name_admin_bar'        => __( 'Forum Post', 'text_domain' ),
 			'archives'              => __( 'Forum Post Archives', 'text_domain' ),
 			'parent_item_colon'     => __( 'Parent Forum Post', 'text_domain' ),
@@ -58,7 +58,7 @@ class pressologyPostTypes {
 		$labels = array(
 			'name'                       => _x( 'Pressology Forums', 'Taxonomy General Name', 'text_domain' ),
 			'singular_name'              => _x( 'Pressology Forum', 'Taxonomy Singular Name', 'text_domain' ),
-			'menu_name'                  => __( 'Forums', 'text_domain' ),
+			'menu_name'                  => __( 'Manage Forums', 'text_domain' ),
 			'all_items'                  => __( 'All Forums', 'text_domain' ),
 			'parent_item'                => __( 'Parent Forum', 'text_domain' ),
 			'parent_item_colon'          => __( 'Parent Forum:', 'text_domain' ),

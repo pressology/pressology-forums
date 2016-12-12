@@ -31,6 +31,8 @@ if ( !class_exists( 'pressologyForums' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_public_styles' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_public_scripts' ) );
 			add_filter( 'single_template', array( $this, 'pressology_single_template' ), 10, 1 );
+			add_action( 'init', array( $this, 'register_comment_editor_buttons' ) );
+
 
 			  /***************/
 			 /* Admin Hooks */
@@ -50,7 +52,12 @@ if ( !class_exists( 'pressologyForums' ) ) {
 		public function enqueue_public_scripts() {
 
 			wp_enqueue_script( 'pressology_public_script', str_replace( "\\", "/", plugin_dir_url( __FILE__ ) ) . 'js/public-pressology.js', array( 'jquery' ) );
-		
+
+			if ( is_single() ) {
+    			if ( comments_open() ) {
+      				wp_enqueue_script( 'comment_editor_buttons' );
+    			}
+  			}
 		}
 
 		public function enqueue_admin_scripts() {
@@ -97,6 +104,10 @@ if ( !class_exists( 'pressologyForums' ) ) {
 		            return $template;
 		    }
 		    return $single;
+		}
+
+		public function register_comment_editor_buttons() {
+			wp_register_script( 'comment_editor_buttons', str_replace( "\\", "/", plugin_dir_url( __FILE__ ) ) . 'js/quicktags.js', array( 'quicktags' ), '0.1', true );
 		}
 	}
 }

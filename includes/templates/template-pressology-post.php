@@ -20,7 +20,9 @@ get_header(); ?>
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) {
-				comments_template();
+				comment_form( 
+					array( 'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Leave A Reply', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+					'label_submit' => 'Post Reply', ) );
 			}
 
 			if ( is_singular( 'attachment' ) ) {
@@ -41,6 +43,7 @@ get_header(); ?>
 			}
 
 			// End of the loop.
+			wp_list_comments();
 		endwhile;
 		?>
 
