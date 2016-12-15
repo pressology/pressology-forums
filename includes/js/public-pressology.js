@@ -28,4 +28,28 @@ jQuery(document).ready(function( $ ) {
         
     })
 
+    $('#quick-post-form > #quick-post-submit').click( function( event ) {
+
+        event.preventDefault();
+
+        $.ajax({
+			type: "POST",
+			url: ajax_obj.ajaxurl,
+			data: {
+				action: "pressology_quick_post",
+                author: $('#quick-post-author').val() ,
+                title: $('#quick-post-title').val() ,
+                content: tinyMCE.get('pressologyeditor').getContent(),
+                forum: $('#quick-post-forum').val()
+			}
+		}).done( function( data ) {
+			//$('#wpchat-input').val('');
+			$('#quick-post-form').html( data );
+		}).fail( function() {
+			//alert('AJAX Request Failed');
+            $('#quick-post-form').html( '<h1>FAILED</h1' );
+		});
+
+    })
+
 })

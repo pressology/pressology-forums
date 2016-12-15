@@ -42,11 +42,13 @@ h1 .pressology-title {
 	margin-bottom: 10px;
 }
 
-#pressology-forum-quick-editor {
-	border-left: 1px solid gray;
-	border-right: 1px solid gray;
-	width: 90%;
+#wp-pressology-forum-quick-editor-wrap {
+	width: 100%;
 	margin-top: 15px;
+}
+
+#wp-pressology-forum-quick-editor-editor-container {
+	border: 1px solid lightgray;
 }
 
 .pressology-post-author {

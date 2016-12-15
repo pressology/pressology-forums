@@ -49,7 +49,8 @@ if ( !class_exists( 'pressologyForums' ) ) {
 		public function enqueue_public_scripts() {
 
 			wp_enqueue_script( 'pressology_public_script', str_replace( "\\", "/", plugin_dir_url( __FILE__ ) ) . 'js/public-pressology.js', array( 'jquery' ) );
-		
+			wp_localize_script( 'pressology_public_script', 'ajax_obj', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+			
 		}
 
 		public function enqueue_admin_scripts() {

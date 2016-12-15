@@ -27,12 +27,14 @@ get_header(); ?>
 				<div class="pressology-forum-quickbar"><a id="quick-thread" href="">Post New Thread</a><a href="">Follow Forum</a></div>
 				<div class="pressology-forum-quick-thread small">
 					<h3>Title</h3>
-					<form id="submit-quick-thread" action="">
-					<input type="text" size="30" spellcheck="true">
+					<form id="quick-post-form">
+					<input type="text" name="title" id="quick-post-title" size="30" spellcheck="true">
 					<?php
-						wp_editor('', 'pressology-forum-quick-editor');
+						wp_editor('', 'pressologyeditor');
 					?>
-					<input type="submit" id="submit" class="submit">
+					<input type="hidden" name="author" id="quick-post-author" value="<?php echo get_current_user_id(); ?>">
+					<input type="hidden" name="forum" id="quick-post-forum" value="<?php echo get_queried_object()->term_id; ?>">
+					<input type="submit" id="quick-post-submit" class="submit">
 					</form>
 				</div><!-- quick thread -->
 			</header><!-- .archive-header -->

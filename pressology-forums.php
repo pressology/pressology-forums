@@ -57,3 +57,40 @@ function deactivate_pressology_forums() {
 $pressologyForums = new pressologyForums();
 register_activation_hook( __FILE__, 'activate_pressology_forums' );
 register_deactivation_hook( __FILE__, 'deactivate_pressology_forums' );
+
+/**
+ * AJAX front-end posting
+ */
+
+add_action( 'wp_ajax_nopriv_pressology_quick_post' , 'pressology_quick_post' );
+add_action( 'wp_ajax_pressology_quick_post' , 'pressology_quick_post' );
+
+function pressology_quick_post() {
+
+	$title = $_POST['title'];
+  	$author = $_POST['author'];
+  	$forum = $_POST['forum'];
+  	$content = $_POST['content'];
+
+    $term = get_term( $forum );
+
+    $post_arr = array(
+	  'post_status' => 'publish',
+      'post_author' => $author,
+      'post_content' => $content,
+      'post_title' => $title,
+      'post_type' => 'pressology_post',
+      'comment_status' => 'open'
+    );
+
+ 	$pressology_post_id = wp_insert_post( $post_arr );
+
+	$term_tax_ids = wp_set_object_terms( $pressology_post_id , $term->name, 'pressology_forum' );
+
+	$msg = 'Post submitted.';
+
+	echo $msg;
+    
+	wp_die();
+
+}
