@@ -55,6 +55,18 @@ get_header(); ?>
 					<div class="pressology-forum-post-listing">
 						<h1 class='pressology-title'><a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>''><?php the_title(); ?></a></h1>
 						<span class='pressology-post-author'>Posted by <?php the_author(); ?></span><span class="pressology-post-date"><?php echo $displaytime; ?></span>
+						<div class='pressology-author-options'>
+							<?php
+
+								if ( get_the_author_meta( 'ID' ) == get_current_user_ID() ) {
+									?>
+									<a href="<?php echo get_edit_post_link(); ?>">Edit</a>
+									<a href="<?php echo get_delete_post_link(); ?>">Delete</a>
+									<?php
+								}
+								
+							?>
+						</div>
 						<?php
 						the_excerpt();?>
 						<div class="pressology-forum-quickbar"><!-- <a id="quick-reply" href="">Reply</a> --><a href=<?php echo "'" . get_post_permalink( get_the_ID() ) . "'"; ?>>View Thread</a><a href="">Follow Thread</a><a href="">Upvote</a></div>

@@ -44,10 +44,11 @@ jQuery(document).ready(function( $ ) {
 			}
 		}).done( function( data ) {
 			//$('#wpchat-input').val('');
-			$('#quick-post-form').html( data );
+			//$('#quick-post-form').html( data );
+            location.reload();
 		}).fail( function() {
 			//alert('AJAX Request Failed');
-            $('#quick-post-form').html( '<h1>FAILED</h1' );
+            //$('#quick-post-form').html( '<h1>FAILED</h1' );
 		});
 
     })
