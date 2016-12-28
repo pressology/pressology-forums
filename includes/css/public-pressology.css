@@ -42,6 +42,7 @@ h1 .pressology-title {
 	margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 #wp-pressology-forum-quick-editor-wrap {
 	width: 100%;
 	margin-top: 15px;
@@ -51,6 +52,15 @@ h1 .pressology-title {
 	border: 1px solid lightgray;
 }
 
+=======
+#pressology-forum-quick-editor {
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	width: 90%;
+	margin-top: 15px;
+}
+
+>>>>>>> 3b05180f3324531159e6dd42e3759c37be2fad4c
 .pressology-post-author {
 	color: rgba(0,0,0,0.5);
 	font-style: italic;

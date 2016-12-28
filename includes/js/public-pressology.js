@@ -28,6 +28,7 @@ jQuery(document).ready(function( $ ) {
         
     })
 
+<<<<<<< HEAD
     $('#quick-post-form > #quick-post-submit').click( function( event ) {
 
         event.preventDefault();
@@ -53,4 +54,6 @@ jQuery(document).ready(function( $ ) {
 
     })
 
+=======
+>>>>>>> 3b05180f3324531159e6dd42e3759c37be2fad4c
 })
